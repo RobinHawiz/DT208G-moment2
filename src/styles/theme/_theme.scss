@@ -1,0 +1,25 @@
+@use "../abstracts/variables" as v;
+
+body {
+  color: v.$text-color;
+}
+
+main {
+  background-image: v.$main-bg-color;
+  input,
+  button {
+    border: none;
+    background: v.$form-color;
+  }
+  button {
+    svg {
+      color: #a18cd1;
+    }
+    &:hover {
+      background-color: transparent;
+      svg {
+        color: v.$form-color;
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+
+body {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-size: v.$h1-font;
+}
+
+input {
+  @extend body;
+  font-size: v.$form-font;
+}
+
+button {
+  font-size: calc(v.$form-font + 0.7rem);
+}
