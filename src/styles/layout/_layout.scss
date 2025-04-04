@@ -35,23 +35,23 @@ main {
   form {
     @include m.flex(normal, normal, row);
     margin: 10vh 0;
-  }
-  input,
-  button {
-    padding: 0.7rem;
-    &:focus {
-      // Ensures focus styles aren’t hidden by adjacent elements
-      z-index: 2;
+    input,
+    button {
+      padding: 0.7rem;
+      &:focus {
+        // Ensures focus styles aren’t hidden by adjacent elements
+        z-index: 2;
+      }
     }
-  }
-  input[type="number"] {
-    width: 5rem;
-  }
-  button {
-    @include m.flex(normal, center, column);
-    flex: 1;
-    padding: 0 0.5rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    input[type="number"] {
+      width: 5rem;
+    }
+    button {
+      @include m.flex(normal, center, column);
+      flex: 1;
+      padding: 0 0.5rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
   }
 }
