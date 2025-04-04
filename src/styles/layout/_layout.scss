@@ -31,9 +31,14 @@ li {
 main {
   @include m.flex(center, normal, column);
   min-height: 100vh;
-  h1,
+  h1 {
+    margin: 10vh 0;
+  }
   form {
+    width: 100%;
+    max-width: 42rem;
     @include m.flex(normal, normal, row);
+    padding: 0 2rem;
     margin: 10vh 0;
     input,
     button {
@@ -43,12 +48,14 @@ main {
         z-index: 2;
       }
     }
+    input[type="text"] {
+      width: 100%;
+    }
     input[type="number"] {
       width: 5rem;
     }
     button {
       @include m.flex(normal, center, column);
-      flex: 1;
       padding: 0 0.5rem;
       cursor: pointer;
       transition: all 0.3s ease;
