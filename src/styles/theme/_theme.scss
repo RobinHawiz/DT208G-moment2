@@ -6,19 +6,21 @@ body {
 
 main {
   background-image: v.$main-bg-color;
-  input,
-  button {
-    border: none;
-    background: v.$form-color;
-  }
-  button {
-    svg {
-      color: #a18cd1;
+  form {
+    input,
+    button {
+      border: none;
+      background: v.$form-color;
     }
-    &:hover {
-      background-color: transparent;
+    button {
       svg {
-        color: v.$form-color;
+        color: #a18cd1;
+      }
+      &:hover {
+        background-color: transparent;
+        svg {
+          color: v.$form-color;
+        }
       }
     }
   }
