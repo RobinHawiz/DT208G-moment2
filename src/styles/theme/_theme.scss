@@ -27,4 +27,21 @@ main {
       }
     }
   }
+  ul {
+    li {
+      background-color: v.$todo-list-color;
+    }
+    // Styling todo priority number
+    p:nth-child(1) {
+      background-color: v.$todo-list-prio-color;
+    }
+    button {
+      border: none;
+      background: v.$todo-list-btn-bg-color;
+      color: v.$todo-list-btn-color;
+      &:hover {
+        background-color: v.$todo-list-btn-bg-hover-color;
+      }
+    }
+  }
 }

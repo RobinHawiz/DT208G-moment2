@@ -1,10 +1,18 @@
+@use "sass:color";
+
 // Colors
 
 $main-bg-color: linear-gradient(120deg, #a18cd1 0%, #fbc2eb 100%);
 $form-color: white;
+$todo-list-color: white;
+$todo-list-btn-color: white;
+$todo-list-btn-bg-color: #49cc49;
+$todo-list-btn-bg-hover-color: color.adjust(#49cc49, $lightness: -8%);
+$todo-list-prio-color: #fbc2eb;
 $text-color: #4b3c5d;
 
 // Font-sizes
 
 $h1-font: 4rem;
 $form-font: 1.8rem;
+$todo-list-font: 1.8rem;

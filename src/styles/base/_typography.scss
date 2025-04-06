@@ -19,3 +19,7 @@ form {
     font-size: calc(v.$form-font + 0.7rem);
   }
 }
+
+ul {
+  font-size: v.$todo-list-font;
+}

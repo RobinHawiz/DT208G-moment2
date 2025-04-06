@@ -61,4 +61,30 @@ main {
       transition: all 0.3s ease;
     }
   }
+  ul {
+    width: 100%;
+    max-width: 42rem;
+    padding: 0 2rem;
+    li {
+      @include m.flex(center, normal, row);
+      gap: 2rem;
+      height: 4rem;
+      margin: 1rem 0;
+    }
+    // Styling todo priority number
+    p:nth-child(1) {
+      @include m.flex(center, center, column);
+      height: 3rem;
+      width: 3rem;
+      margin-left: 1rem;
+      border-radius: 50%;
+    }
+    button {
+      width: 4rem;
+      height: 100%;
+      margin-left: auto;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+  }
 }
