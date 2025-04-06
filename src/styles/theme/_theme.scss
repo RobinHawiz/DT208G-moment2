@@ -12,6 +12,9 @@ main {
       border: none;
       background: v.$form-color;
     }
+    input {
+      color: v.$text-color;
+    }
     button {
       svg {
         color: #a18cd1;
