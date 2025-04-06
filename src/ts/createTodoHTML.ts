@@ -1,4 +1,4 @@
-import { ITodo } from "./iTodo";
+import { Todo } from "./todo.types";
 
 /**
  * Creates and returns a <li> element representing a single todo item.
@@ -17,7 +17,7 @@ export function createTodoHTML({
   task,
   completed,
   priority,
-}: ITodo): HTMLLIElement {
+}: Todo): HTMLLIElement {
   const priorityElemP = document.createElement("p");
   priorityElemP.innerText = `${priority}`;
 

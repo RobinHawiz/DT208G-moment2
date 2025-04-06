@@ -1,13 +1,13 @@
 import { createTodoHTML } from "./createTodoHTML";
-import { ITodo } from "./iTodo";
-import { ITodoList } from "./iTodoList";
+import { Todo } from "./todo.types";
+import { TodoListContract } from "./todoList.types";
 
 /**
  * Attaches submit handler to the todo form and wires it to the todo list logic.
  *
  * @param myTodos - The active todo list instance responsible for state management and persistence.
  */
-export function setupTodoForm(myTodos: ITodoList): void {
+export function setupTodoForm(myTodos: TodoListContract): void {
   const form: HTMLFormElement = document.querySelector("form")!;
   form.addEventListener("submit", (e) => handleTodoSubmit(e, myTodos));
 }
@@ -22,10 +22,10 @@ export function setupTodoForm(myTodos: ITodoList): void {
  * @param e - The form submission event
  * @param myTodos - The todo list instance to operate on
  */
-function handleTodoSubmit(e: SubmitEvent, myTodos: ITodoList) {
+function handleTodoSubmit(e: SubmitEvent, myTodos: TodoListContract) {
   e.preventDefault();
   const formData = new FormData(e.target as HTMLFormElement);
-  const todo: ITodo = {
+  const todo: Todo = {
     task: formData.get("todo-desc") as string,
     completed: false,
     priority: Number(formData.get("todo-prio")),
@@ -40,7 +40,7 @@ function handleTodoSubmit(e: SubmitEvent, myTodos: ITodoList) {
  *
  * @param todo - The todo object to display
  */
-function displayTodo(todo: ITodo) {
+function displayTodo(todo: Todo) {
   const ul: HTMLUListElement = document.querySelector("ul")!;
   const li: HTMLLIElement = createTodoHTML(todo);
 

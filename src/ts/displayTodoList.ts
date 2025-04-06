@@ -1,5 +1,5 @@
 import { createTodoHTML } from "./createTodoHTML";
-import { ITodo } from "./iTodo";
+import { Todo } from "./todo.types";
 
 /**
  * Renders a list of todos into the DOM.
@@ -11,7 +11,7 @@ import { ITodo } from "./iTodo";
  *
  * @param todoList - Array of todos to render
  */
-export function displayTodoList(todoList: Array<ITodo>) {
+export function displayTodoList(todoList: Array<Todo>) {
   const ul = document.querySelector("ul")!;
   const fragment = document.createDocumentFragment();
   todoList.forEach(({ task, completed, priority }) => {

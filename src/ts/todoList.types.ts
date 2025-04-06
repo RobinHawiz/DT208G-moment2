@@ -1,11 +1,11 @@
-import { ITodo } from "./iTodo";
+import { Todo } from "./todo.types";
 
 /**
  * Interface defining the structure and behavior of a Todo list.
  */
-export interface ITodoList {
+export interface TodoListContract {
   /** The current list of todos */
-  todos: Array<ITodo>;
+  todos: Array<Todo>;
   /**
    * Adds a new todo to the list.
    * @param task - The task description (must be non-empty)
@@ -20,7 +20,7 @@ export interface ITodoList {
    */
   markTodoCompleted(todoIndex: number): void;
   /** Returns the current list of todos */
-  getTodos(): Array<ITodo>;
+  getTodos(): Array<Todo>;
   /** Saves the todo list to localStorage */
   saveToLocalStorage(): void;
   /** Loads the todo list from localStorage */

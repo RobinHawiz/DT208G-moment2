@@ -1,7 +1,7 @@
 /**
  * Interface representing a single Todo item.
  */
-export interface ITodo {
+export interface Todo {
   /** The description of the task to be done */
   task: string;
   /** Whether the task has been completed */
