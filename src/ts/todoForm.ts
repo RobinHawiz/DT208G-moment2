@@ -1,5 +1,6 @@
 import { createTodoHTML } from "./createTodoHTML";
 import { Todo } from "./todo.types";
+import { toggleTodoCompletion } from "./todoButtonEventListeners";
 import { TodoListContract } from "./todoList.types";
 
 /**
@@ -33,20 +34,24 @@ function handleTodoSubmit(e: SubmitEvent, myTodos: TodoListContract) {
   const todoIsValid = myTodos.addTodo(todo.task, todo.priority);
   if (todoIsValid) {
     myTodos.saveToLocalStorage();
-    displayTodo(todo);
+    displayTodo(myTodos, todo);
   } else {
     alert("The submitted todo was invalid. Please try again (or don't)");
   }
 }
 
 /**
- * Renders a todo item and appends it to the list in the DOM.
+ * Renders a todo item and appends it to the DOM.
  *
+ * @param myTodos - The active todo list instance responsible for state management and persistence.
  * @param todo - The todo object to display
  */
-function displayTodo(todo: Todo) {
+function displayTodo(myTodos: TodoListContract, todo: Todo) {
   const ul: HTMLUListElement = document.querySelector("ul")!;
   const li: HTMLLIElement = createTodoHTML(todo);
+  const index = myTodos.getTodos().length - 1;
+  li.dataset.index = String(index);
+  toggleTodoCompletion(myTodos, li);
 
   ul.appendChild(li);
 }
