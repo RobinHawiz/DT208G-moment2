@@ -6,6 +6,6 @@ import { setupTodoForm } from "./todoForm";
 document.addEventListener("DOMContentLoaded", () => {
   const myTodos = new TodoList();
   myTodos.loadFromLocalStorage();
-  displayTodoList(myTodos.getTodos());
+  displayTodoList(myTodos);
   setupTodoForm(myTodos);
 });

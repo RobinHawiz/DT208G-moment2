@@ -4,16 +4,15 @@ import { Todo } from "./todo.types";
  * Creates and returns a <li> element representing a single todo item.
  *
  * The element includes:
- * - A completion data attribute
  * - Task description
  * - Priority value
- * - A completion button with a click listener that toggles the `.completed` class
- *   and updates the `data-completed` attribute accordingly.
+ * - A toggle completion button (logic wired externally)
  *
- * The returned element is interactive, but not inserted into the DOM by this function.
+ * If the todo is marked as completed, the `.completed` class is applied.
+ * This function is a pure DOM factory: it creates elements but does not attach event listeners or insert into the DOM.
  *
  * @param todo - The todo item to render
- * @returns A fully constructed and interactive <li> element representing the todo
+ * @returns A fully constructed <li> element representing the todo
  */
 export function createTodoHTML({
   task,
@@ -31,16 +30,10 @@ export function createTodoHTML({
   completeElemBtn.setAttribute("id", "complete");
 
   const li = document.createElement("li");
-  li.setAttribute("data-completed", completed.toString());
+  if (completed) li.classList.add("completed");
   li.appendChild(priorityElemP);
   li.appendChild(taskElemP);
   li.appendChild(completeElemBtn);
-
-  completeElemBtn.addEventListener("click", () => {
-    const isComplete = li.dataset.completed === "true";
-    li.dataset.completed = (!isComplete).toString();
-    li.classList.toggle("completed");
-  });
 
   return li;
 }

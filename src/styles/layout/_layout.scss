@@ -85,6 +85,9 @@ main {
       margin-left: auto;
       cursor: pointer;
       transition: all 0.3s ease;
+      svg {
+        pointer-events: none;
+      }
     }
   }
 }
