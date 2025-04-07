@@ -4,9 +4,10 @@ import { Todo } from "./todo.types";
  * Creates and returns a <li> element representing a single todo item.
  *
  * The element includes:
+ * - A completion data attribute
  * - Task description
  * - Priority value
- * - A completion button with data attributes
+ * - A completion button
  *
  * This function serves as a pure DOM factory with no side effects beyond element creation.
  *
