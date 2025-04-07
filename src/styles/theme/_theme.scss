@@ -30,6 +30,14 @@ main {
   ul {
     li {
       background-color: v.$todo-list-color;
+      transition: all ease 0.3s;
+    }
+    li.completed {
+      opacity: 0.5;
+      // Styling todo description
+      p:nth-child(2) {
+        text-decoration: line-through;
+      }
     }
     // Styling todo priority number
     p:nth-child(1) {
