@@ -27,9 +27,16 @@
         <label class="visually-hidden" for="todo-desc">
           Todo description
         </label>
-        <input id="todo-desc" name="todo-desc" type="text" />
+        <input id="todo-desc" name="todo-desc" type="text" required />
         <label class="visually-hidden" for="todo-prio"> Todo priority </label>
-        <input type="number" id="todo-prio" name="todo-prio" min="1" max="3" />
+        <input
+          type="number"
+          id="todo-prio"
+          name="todo-prio"
+          min="1"
+          max="3"
+          required
+        />
         <button>
           <i class="fas fa-plus-square"></i>
         </button>
