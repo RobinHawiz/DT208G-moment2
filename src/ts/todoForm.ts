@@ -25,7 +25,8 @@ export function setupTodoForm(myTodos: TodoListContract): void {
  */
 function handleTodoSubmit(e: SubmitEvent, myTodos: TodoListContract) {
   e.preventDefault();
-  const formData = new FormData(e.target as HTMLFormElement);
+  const form = e.target as HTMLFormElement;
+  const formData = new FormData(form);
   const todo: Todo = {
     task: formData.get("todo-desc") as string,
     completed: false,
@@ -35,6 +36,7 @@ function handleTodoSubmit(e: SubmitEvent, myTodos: TodoListContract) {
   if (todoIsValid) {
     myTodos.saveToLocalStorage();
     displayTodo(myTodos, todo);
+    clearInputFields(form);
   } else {
     alert("The submitted todo was invalid. Please try again (or don't)");
   }
@@ -54,4 +56,16 @@ function displayTodo(myTodos: TodoListContract, todo: Todo) {
   toggleTodoCompletion(myTodos, li);
 
   ul.appendChild(li);
+}
+
+/**
+ * Clears all <input> field values in the given form element.
+ *
+ * @param form - The form element to reset
+ */
+function clearInputFields(form: HTMLFormElement) {
+  const formInputs = form.querySelectorAll("input");
+  formInputs.forEach((input) => {
+    input.value = "";
+  });
 }
