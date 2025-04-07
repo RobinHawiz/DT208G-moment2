@@ -27,9 +27,9 @@ export function createTodoHTML({
   const completeElemBtn = document.createElement("button");
   completeElemBtn.innerHTML = `<i class="fa-solid fa-check"></i>`;
   completeElemBtn.setAttribute("id", "complete");
-  completeElemBtn.setAttribute("data-completed", `${completed}`);
 
   const li = document.createElement("li");
+  li.setAttribute("data-completed", `${completed}`);
   li.appendChild(priorityElemP);
   li.appendChild(taskElemP);
   li.appendChild(completeElemBtn);
