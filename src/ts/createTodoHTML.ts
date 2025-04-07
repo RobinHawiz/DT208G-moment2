@@ -31,7 +31,7 @@ export function createTodoHTML({
   completeElemBtn.setAttribute("id", "complete");
 
   const li = document.createElement("li");
-  li.setAttribute("data-completed", `${completed}`);
+  li.setAttribute("data-completed", completed.toString());
   li.appendChild(priorityElemP);
   li.appendChild(taskElemP);
   li.appendChild(completeElemBtn);
