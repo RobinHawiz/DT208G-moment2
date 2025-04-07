@@ -12,10 +12,10 @@ export class TodoList implements TodoListContract {
     this.todos.push(todo);
     return true;
   }
-  markTodoCompleted(todoIndex: number): void {
-    const todo: Todo | undefined = this.todos[todoIndex];
-    if (!todo) throw new Error("The given todoIndex gave no results.");
-    this.todos[todoIndex].completed = true;
+  toggleTodoCompleted(todoIndex: number): void {
+    const todo = this.todos[todoIndex];
+    if (!todo) throw new Error("Invalid todo index: ${todoIndex}");
+    todo.completed = !todo.completed;
   }
   getTodos(): Array<Todo> {
     return this.todos;

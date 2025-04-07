@@ -14,11 +14,11 @@ export interface TodoListContract {
    */
   addTodo(task: string, priority: number): boolean;
   /**
-   * Marks a todo as completed by its index in the list.
-   * @param todoIndex - Index of the todo to mark as completed
+   * Toggles a todo as completed or uncompleted by its index in the list.
+   * @param todoIndex - Index of the todo to mark as completed/uncompleted
    * @throws if the given todoIndex does not point to an element inside the current list of todos
    */
-  markTodoCompleted(todoIndex: number): void;
+  toggleTodoCompleted(todoIndex: number): void;
   /** Returns the current list of todos */
   getTodos(): Array<Todo>;
   /** Saves the todo list to localStorage */
