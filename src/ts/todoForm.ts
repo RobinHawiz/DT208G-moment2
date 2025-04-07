@@ -30,9 +30,13 @@ function handleTodoSubmit(e: SubmitEvent, myTodos: TodoListContract) {
     completed: false,
     priority: Number(formData.get("todo-prio")),
   };
-  myTodos.addTodo(todo.task, todo.priority);
-  myTodos.saveToLocalStorage();
-  displayTodo(todo);
+  const todoIsValid = myTodos.addTodo(todo.task, todo.priority);
+  if (todoIsValid) {
+    myTodos.saveToLocalStorage();
+    displayTodo(todo);
+  } else {
+    alert("The submitted todo was invalid. Please try again (or don't)");
+  }
 }
 
 /**
